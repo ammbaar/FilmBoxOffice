@@ -1,0 +1,47 @@
+﻿@page
+@model FilmBoxOffice.Pages.Films.DeleteModel
+
+@{
+    ViewData["Title"] = "Hapus Film";
+}
+
+<h3>Hapus Film</h3>
+
+<hr />
+<div>
+    <b>Apakah Anda yakin ingin menghapus ini?</b>
+    <br /><br />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Judul)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Judul)
+        </dd>
+        <dt class="col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.Film.TanggalRilis) -->
+            Tanggal Rilis
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.TanggalRilis)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Harga)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Harga)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Film.Id" />
+        <input type="submit" value="Hapus" class="btn btn-danger" /> |
+        <a asp-page="./Index">Kembali</a>
+    </form>
+</div>

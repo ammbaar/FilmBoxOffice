@@ -1,0 +1,44 @@
+﻿@page
+@model FilmBoxOffice.Pages.Films.DetailsModel
+
+@{
+    ViewData["Title"] = "Detail Film";
+}
+
+<h3>Detail Film</h3>
+
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Judul)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Judul)
+        </dd>
+        <dt class="col-sm-2">
+            <!-- @Html.DisplayNameFor(model => model.Film.TanggalRilis) -->
+            Tanggal Rilis
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.TanggalRilis)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Harga)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Harga)
+        </dd>
+    </dl>
+</div>
+<br />
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Film?.Id">Edit</a> |
+    <a asp-page="./Index">Kembali</a>
+</div>

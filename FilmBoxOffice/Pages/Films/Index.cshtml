@@ -1,0 +1,56 @@
+﻿@page
+@model FilmBoxOffice.Pages.Films.IndexModel
+
+@{
+    ViewData["Title"] = "Daftar Film";
+}
+
+<h3>Daftar Film</h3>
+
+<hr />
+<p>
+    <a asp-page="Create">+ Tambah Film</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr align="center">
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Judul)
+            </th>
+            <th>
+                <!-- @Html.DisplayNameFor(model => model.Film[0].TanggalRilis) -->
+                Tanggal Rilis
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Harga)
+            </th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Film) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Judul)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => item.TanggalRilis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td align="right">
+                @Html.DisplayFor(modelItem => item.Harga)
+            </td>
+            <td align="center">
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detail</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Hapus</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

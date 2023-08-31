@@ -1,0 +1,47 @@
+﻿@page
+@model FilmBoxOffice.Pages.Films.EditModel
+
+@{
+    ViewData["Title"] = "Edit Film";
+}
+
+<h3>Edit Film</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Film.Id" />
+            <div class="form-group">
+                <label asp-for="Film.Judul" class="control-label"></label>
+                <input asp-for="Film.Judul" class="form-control" />
+                <span asp-validation-for="Film.Judul" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.TanggalRilis" class="control-label">Tanggal Rilis</label>
+                <input asp-for="Film.TanggalRilis" class="form-control" />
+                <span asp-validation-for="Film.TanggalRilis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.Genre" class="control-label"></label>
+                <input asp-for="Film.Genre" class="form-control" />
+                <span asp-validation-for="Film.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.Harga" class="control-label"></label>
+                <input asp-for="Film.Harga" class="form-control" />
+                <span asp-validation-for="Film.Harga" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Simpan" class="btn btn-primary" /> |
+                <a asp-page="./Index">Kembali</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
